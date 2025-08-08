@@ -1,0 +1,5 @@
+product_id,product_name,category,price_band
+P101,Surgical Stapler,Stapler,High
+P102,Grasper,Forceps,Medium
+P103,Needle Holder,Holder,Low
+P104,Scissor,Cutter,Medium
