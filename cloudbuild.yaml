@@ -1,0 +1,51 @@
+# Cloud Build template for packaging and running the Vertex AI trainer.
+# This file is a deployment template and requires project-specific GCP configuration
+# such as PROJECT_ID, bucket names, IAM permissions, and enabled Vertex AI APIs.
+
+steps:
+  - name: "gcr.io/cloud-builders/gcloud"
+    id: "Show active project"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        echo "Running Cloud Build for project: $PROJECT_ID"
+        gcloud config list
+
+  - name: "python:3.11"
+    id: "Install trainer dependencies"
+    dir: "7_vertex_ai_ml_pipeline"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        python -m pip install --upgrade pip
+        pip install -e trainer
+
+  - name: "python:3.11"
+    id: "Package trainer"
+    dir: "7_vertex_ai_ml_pipeline"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        python trainer/setup.py sdist bdist_wheel
+        ls -R dist || true
+
+  # Placeholder for a project-specific Vertex AI custom job.
+  # Replace bucket, service account, machine type, and worker pool settings
+  # before using this in a live GCP project.
+  - name: "gcr.io/cloud-builders/gcloud"
+    id: "Vertex AI deployment template"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        echo "Template step: submit Vertex AI training/deployment job here."
+        echo "Example future command:"
+        echo "gcloud ai custom-jobs create --region=us-central1 --display-name=big-data-recommender-training ..."
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: "1800s"

@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Local audit/temp files
+repo_files.txt
+status.txt
+
+# Secrets / local credentials
+*.key
+*.pem
+*.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Spark / local runtime
+metastore_db/
+derby.log
+.spark/

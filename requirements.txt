@@ -1,0 +1,11 @@
+faker
+pymongo
+dnspython
+pyspark
+pandas
+numpy
+scikit-learn
+joblib
+feast
+google-cloud-storage
+google-cloud-aiplatform

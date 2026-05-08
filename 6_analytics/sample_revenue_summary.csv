@@ -1,0 +1,17 @@
+category,region,total_orders,total_units_sold,total_revenue,avg_order_value
+Forceps,South,80,255,14780.98,184.76
+Cutter,West,85,256,14441.51,169.9
+Forceps,East,83,270,14409.01,173.6
+Cutter,East,88,275,14338.76,162.94
+Forceps,West,77,246,14232.67,184.84
+Stapler,South,89,253,13737.91,154.36
+Holder,North,87,232,13676.46,157.2
+Stapler,East,90,266,13588.36,150.98
+Stapler,North,90,257,13411.93,149.02
+Cutter,South,74,239,13269.57,179.32
+Holder,West,74,226,13202.97,178.42
+Holder,East,86,242,13191.59,153.39
+Forceps,North,84,241,12907.78,153.66
+Stapler,West,79,238,12514.33,158.41
+Holder,South,68,204,11609.51,170.73
+Cutter,North,66,196,10671.7,161.69
